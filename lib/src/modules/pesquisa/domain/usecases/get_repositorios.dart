@@ -1,6 +1,6 @@
 import 'package:github_search/src/modules/pesquisa/domain/entities/repositorio.dart';
 import 'package:github_search/src/modules/pesquisa/domain/repositories/interface_pesquisa_repository.dart';
-import 'package:github_search/src/modules/pesquisa/infra/repositories/pesquisa_repository_impl.dart';
+import 'package:github_search/src/modules/pesquisa/infra/repositories/pesquisa_repository.dart';
 
 abstract class IGetRepositorios {
   final IPesquisaRepository pesquisaRepository;
@@ -12,7 +12,7 @@ abstract class IGetRepositorios {
 
 class GetRepositoriosImpl implements IGetRepositorios {
   @override
-  final PesquisaRepositoryImpl pesquisaRepository;
+  final PesquisaRepository pesquisaRepository;
 
   GetRepositoriosImpl({required this.pesquisaRepository});
 

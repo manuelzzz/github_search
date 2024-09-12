@@ -1,11 +1,11 @@
 import 'package:github_search/src/modules/pesquisa/domain/repositories/interface_pesquisa_repository.dart';
-import 'package:github_search/src/modules/pesquisa/external/datasources/pesquisa_github_datasource_impl.dart';
+import 'package:github_search/src/modules/pesquisa/external/datasources/pesquisa_github_datasource.dart';
 import 'package:github_search/src/modules/pesquisa/infra/models/repositorio_model.dart';
 
-class PesquisaRepositoryImpl implements IPesquisaRepository {
-  final PesquisaGithubDatasourceImpl datasource;
+class PesquisaRepository implements IPesquisaRepository {
+  final PesquisaGithubDatasource datasource;
 
-  PesquisaRepositoryImpl({
+  PesquisaRepository({
     required this.datasource,
   });
 

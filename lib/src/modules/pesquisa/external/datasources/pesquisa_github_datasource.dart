@@ -2,10 +2,10 @@ import 'package:dio/dio.dart';
 import 'package:github_search/src/modules/pesquisa/infra/datasources/interface_pesquisa_github_datasource.dart';
 import 'package:github_search/src/modules/pesquisa/infra/models/repositorio_model.dart';
 
-class PesquisaGithubDatasourceImpl implements IPesquisaGithubDatasource {
+class PesquisaGithubDatasource implements IPesquisaGithubDatasource {
   final Dio dio;
 
-  PesquisaGithubDatasourceImpl({
+  PesquisaGithubDatasource({
     required this.dio,
   });
 
