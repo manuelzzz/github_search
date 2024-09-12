@@ -1,5 +1,5 @@
 import 'package:github_search/src/modules/pesquisa/domain/entities/repositorio.dart';
-import 'package:github_search/src/modules/pesquisa/domain/repositories/pesquisa_repository.dart';
+import 'package:github_search/src/modules/pesquisa/domain/repositories/interface_pesquisa_repository.dart';
 import 'package:github_search/src/modules/pesquisa/infra/repositories/pesquisa_repository_impl.dart';
 
 abstract class IGetRepositorios {
