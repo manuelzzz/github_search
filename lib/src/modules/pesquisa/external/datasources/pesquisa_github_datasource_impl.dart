@@ -21,6 +21,7 @@ class PesquisaGithubDatasourceImpl implements IPesquisaGithubDatasource {
       var list = resultList
           .map(
             (element) => RepositorioModel(
+              id: element['id'],
               nome: element['name'],
               imagem: element['owner']['avatar_url'],
               url: element['html_url'],
