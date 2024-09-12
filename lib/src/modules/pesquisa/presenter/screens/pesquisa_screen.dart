@@ -47,6 +47,20 @@ class _PesquisaScreenState extends State<PesquisaScreen> {
               },
             ),
           ),
+          StreamBuilder(
+            initialData: false,
+            stream: widget.pesquisaBloc.loading,
+            builder: (
+              BuildContext context,
+              AsyncSnapshot<bool> snapshot,
+            ) {
+              if (snapshot.data!) {
+                return const LinearProgressIndicator();
+              }
+
+              return const SizedBox();
+            },
+          ),
           Expanded(
             child: StreamBuilder(
               initialData: const <Repositorio>[],
@@ -61,16 +75,22 @@ class _PesquisaScreenState extends State<PesquisaScreen> {
                       itemCount: snapshot.data!.length,
                       itemBuilder: (context, index) {
                         return ListTile(
-                          leading: CircleAvatar(
-                            backgroundImage: NetworkImage(
-                              snapshot.data![index].imagem,
+                          leading: Hero(
+                            tag: snapshot.data![index].id,
+                            child: CircleAvatar(
+                              child: ClipOval(
+                                child: Image.network(
+                                  snapshot.data![index].imagem,
+                                ),
+                              ),
                             ),
                           ),
                           title: Text(snapshot.data![index].nome),
                           subtitle: Text(snapshot.data![index].url),
-                          onTap: () {
-                            
-                          },
+                          onTap: () => Modular.to.pushNamed(
+                            "/pesquisa/detalhes",
+                            arguments: snapshot.data![index],
+                          ),
                         );
                       },
                     );
