@@ -4,6 +4,7 @@ import 'package:github_search/src/modules/pesquisa/domain/entities/repositorio.d
 
 class RepositorioModel extends Repositorio {
   RepositorioModel({
+    required super.id,
     required super.nome,
     required super.imagem,
     required super.url,
@@ -19,6 +20,7 @@ class RepositorioModel extends Repositorio {
 
   static RepositorioModel fromMap(Map<String, dynamic> map) {
     return RepositorioModel(
+      id: map['id'],
       nome: map['name'],
       imagem: map['image'],
       url: map['url'],
